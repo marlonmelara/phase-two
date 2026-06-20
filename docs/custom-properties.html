@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+
+<style>
+
+/* --- ÁMBITO GLOBAL --- */
+/* :root apunta a la raíz del documento, equivalente a la etiqueta html */
+:root {
+    --brand-color: #00e5ff;       /* Celeste brillante global */
+    --text-primary: #ffffff;      /* Texto blanco global */
+    --padding-base: 1rem;         /* Escala de espaciado reutilizable */
+}
+
+/* --- ESTILOS COMPONENTES --- */
+.btn-primary {
+    /* Uso de variable global con CSS Defensivo (fallback de seguridad) */
+    background-color: var(--brand-color, #ff007f);
+    color: var(--text-primary, #000000);
+    padding: var(--padding-base);
+    border: none;
+    border-radius: 4px;
+}
+
+/* --- ÁMBITO LOCAL --- */
+.alert-box {
+    /* Declaración de variables locales. Evitan la polución del resto del DOM */
+    --brand-color: #ff3d00;       /* Sobreescritura local a Rojo Alerta */
+    --padding-base: 1.5rem;       /* El padding aumenta solo para este bloque */
+
+    background-color: #1e1e1e;
+    padding: var(--padding-base); /* Aplica las 1.5rem locales */
+    border-left: 5px solid var(--brand-color);
+
+    /* Cualquier elemento interno (como .btn-primary dentro de .alert-box)
+       heredará de forma automática el valor local sobreescrito.
+    */
+}
+
+</style>
+
+
+
+  <title>Custom Properties - Bootcamp</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="header-container">
+      <a href="index.html" class="back-link">← Volver</a>
+      <div class="logo">
+        <h1 class="logo-title">Custom Properties</h1>
+        <p class="logo-subtitle">Variable de CSS</p>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="container">
+      <h2 class="title">Entendiendo las variables de CSS</h2>
+
+      <div class="section">
+
+        <div class="theme-container">
+  <button class="btn-primary">Botón Global</button>
+
+  <div class="alert-box">
+    <button class="btn-primary">Botón Alerta Local</button>
+  </div>
+</div>
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">Bootcamp Phase Two © 2026</p>
+  </footer>
+</body>
+</html>
