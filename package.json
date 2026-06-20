@@ -1,0 +1,34 @@
+{
+  "name": "phase-two",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "lint": "pnpm lint:js && pnpm lint:css",
+    "lint:js": "oxlint",
+    "lint:js:fix": "oxlint --fix",
+    "format": "oxfmt .",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "lint:all": "pnpm lint:js && pnpm lint:css && pnpm format"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.55.0",
+    "oxlint": "^1.70.0",
+    "servor": "^4.0.2",
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^8.1.1"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.6.0",
+      "onFail": "download"
+    }
+  }
+}
