@@ -14,7 +14,7 @@
     "format": "oxfmt .",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
     "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
-    "lint:all": "pnpm lint:js && pnpm lint:css && pnpm format",
+    "lint:all": "pnpm lint:js:fix && pnpm lint:css:fix && pnpm format",
     "build": "mkdir -p docs && cp -r src/* docs/",
     "dev": "servor src -b"
   },
