@@ -1,0 +1,68 @@
+/* stylelint-disable comment-empty-line-before */
+/* stylelint-disable selector-class-pattern */
+/* custom-properties.css - Estilos específicos del ejercicio de Custom Properties */
+
+/* ===== THEME CONTAINER ===== */
+.theme-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ===== BOX (Contenedor de sección) ===== */
+.box {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  gap: var(--spacing-md);
+}
+
+.box__title {
+  color: var(--color-accent);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.box__desc {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ===== BUTTON PRIMARY ===== */
+.btn-primary {
+  padding: var(--spacing-md);
+  border: none;
+  color: var(--text-primary, var(--color-text-primary));
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background-color: var(--brand-color, var(--color-accent));
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ===== ALERT BOX (Con variables locales) ===== */
+.alert-box {
+  --brand-color: #ff3d00;
+  --text-primary: var(--color-text-primary);
+
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  border-left: 5px solid var(--brand-color);
+  border-radius: var(--radius-sm);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (width <= 768px) {
+  .theme-container {
+    gap: var(--spacing-md);
+  }
+}
